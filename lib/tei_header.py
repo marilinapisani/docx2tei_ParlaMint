@@ -1,4 +1,4 @@
-import pandas ad pd
+import pandas as pd
 import xml.etree.ElementTree as ET
 
 def tei_header(df, file_date_short):
