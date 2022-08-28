@@ -1,4 +1,7 @@
-def tei_header(df):
+import pandas ad pd
+import xml.etree.ElementTree as ET
+
+def tei_header(df, file_date_short):
   text_list = df.loc[(df['tag'].isin(['u', 'seg'])), 'text'].astype(str).values.flatten().tolist()
   text_string = ''.join(text_list)
   words = len(text_string.split())
