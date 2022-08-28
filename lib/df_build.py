@@ -1,4 +1,12 @@
-def df_build(df): 
+import cld3
+def df_build(df, file_name, file_date): 
+  file_name = file_name
+  file_date = file_date
+  
+  intervinent_len = 100
+  not_notes = ['D3Intervinent', 'D3IntervinentObertura', 'D3Textnormal', 'CSessi', 'CPresidncia', 'Crgan']
+  interv_style = ['D3Intervinent', 'D3IntervinentObertura']
+  
   df['text'] = df['text'].str.strip()
   df['len'] = df['text'].str.len()
   df['lang'] = df['lang'].str[:2]
