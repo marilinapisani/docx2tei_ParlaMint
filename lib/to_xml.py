@@ -1,12 +1,6 @@
 import xml.etree.ElementTree as ET
 
-def to_xml(df, file_date_short):
-  
-  tei_ana = ''
-  if file_date_short >= '2019-11-01':
-    tei_ana = '#covid'
-  else:
-    tei_ana = '#reference'  
+def to_xml(df, tei_ana):
   
   text = ET.Element('text')
   text.attrib['ana'] = tei_ana
