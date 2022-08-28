@@ -69,7 +69,7 @@ def df_build(df):
   members_file['Cargo'] = members_file['Cargo'].str.rstrip()
 
   #lectura de la tabla de referencia confeccionada previamente 
-  members = pd.read_csv("/content/ParlaMint/Metadata/ParlaMint_Parametros - MembersParlament.csv")
+  members = pd.read_csv("/content/docx2tei_ParlaMint/parameters/special_denominations.csv")
   members['Alta'] =  pd.to_datetime(members['Alta'], infer_datetime_format=True)
   members['Baja'] =  pd.to_datetime(members['Baja'], infer_datetime_format=True)
     
