@@ -10,6 +10,7 @@ def df_build(df, file_name, file_date, members_id):
   interv_style = ['D3Intervinent', 'D3IntervinentObertura']
   
   df['text'] = df['text'].str.strip()
+  df['style'] = df['style'].str.replace("/ ", "", regex=True) #errores en ParlaMint-ES-CT_2019-10-10-3902 y ParlaMint-ES-CT_2020-07-07-5701
   df['len'] = df['text'].str.len()
   df['lang'] = df['lang'].str[:2]
 
