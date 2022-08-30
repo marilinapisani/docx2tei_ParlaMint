@@ -219,5 +219,5 @@ def df_build(df, file_name, file_date, members_id):
   df['lang'] = df['lang'].fillna(' ')
   df['tag_type'] = df['tag_type'].fillna('none')
 
-  df = df[['text','lang','utterance_id', 'segment_id', 'tag', 'len', 'style', 'curs', 'bold' , 'Id', 'role', 'file', 'tag_type', 'Nombre', 'tag_name', 'note_type']]
+  df = df[['text','lang','utterance_id', 'segment_id', 'tag', 'len', 'style', 'curs', 'bold' , 'Id', 'role', 'file', 'tag_type', 'Nombre', 'tag_name', 'note_type', 'date']]
   return df
