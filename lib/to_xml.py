@@ -6,7 +6,7 @@ def to_xml(df, tei_ana):
   text.attrib['ana'] = tei_ana
   body = ET.Element('body')
   text.append(body) 
-    
+  u = ET.Element('u') #se incorpora acá para evitar errores con documentos mal marcados al comienzo 
   for i, row in df.iterrows():
     tag = row[4]
     if tag == 'div':
