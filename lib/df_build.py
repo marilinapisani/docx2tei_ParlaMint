@@ -210,10 +210,12 @@ def df_build(df, file_name, file_date, members_id):
                   , right_on = 'speaker')
 
   df.loc[(df['lang'] == '') & 
-                (df['tag'].isin(['u', 'seg'])), "lang"] = df['max_x']
+                (df['tag'].isin(['u', 'seg'])), "lang"] = df['max_x'] 
 
   df.loc[(df['lang'] == '') & 
                 (df['tag'].isin(['u', 'seg'])), "lang"] = df['max_y']
+  
+  df.loc[(df['lang'] == ''), "lang"] = 'ca' #forzamos si quedan vacíos
 
   df['Id'] = df['Id'].fillna(' ')
   df['lang'] = df['lang'].fillna(' ')
