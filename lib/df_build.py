@@ -154,12 +154,9 @@ def df_build(df, file_name, file_date, members_id):
         (df['style'] == 'D3Acotacicva') & 
         (df['curs'].isin(['Refdenotaalpie', 'ECCursiva', 'nfasis', 'st1'])) , "tag_type"] = 'seg' #a nivel de segmento
 
-  #df.loc[((df['text'].str.upper().str.startswith('SESSI')) 
-  #        & (~df['style'].isin(not_notes))), "tag"]  = 'div' 
-  
-  df.loc[(df['text'].str.upper().str.startswith('SESSI')), "tag"]  = 'div' 
-                
-  
+  df.loc[((df['text'].str.upper().str.startswith('SESSI')) 
+          & (~df['style'].isin(not_notes))), "tag"]  = 'div' 
+          
   df.loc[(df['style'] == 'D3Acotacicva') & 
                  (df['text'].str.lower().str.contains('aplaudiments') == True), 'tag_name'] = 'kinesic_applause'
   
